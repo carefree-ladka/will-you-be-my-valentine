@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://pawankumar.github.io/will-you-be-my-valentine",
+  "homepage": "https://isha.carefree-ladka.in",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
