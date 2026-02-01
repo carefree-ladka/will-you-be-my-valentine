@@ -1,16 +1,9 @@
 import { CONFIG } from "../config";
+import { useValentineStore } from "../store/valentineStore";
 
-interface QuestionPromptProps {
-  showMessage: boolean;
-  saidYes: boolean;
-  onYesClick: () => void;
-}
-
-export const QuestionPrompt: React.FC<QuestionPromptProps> = ({
-  showMessage,
-  saidYes,
-  onYesClick
-}) => {
+export const QuestionPrompt: React.FC = () => {
+  const { showMessage, saidYes, handleYesClick } = useValentineStore();
+  
   if (saidYes) return null;
 
   const handleMaybeButtonHover = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -55,7 +48,7 @@ export const QuestionPrompt: React.FC<QuestionPromptProps> = ({
           style={{
             boxShadow: "0 0 20px rgba(255, 23, 68, 0.6)",
           }}
-          onClick={onYesClick}
+          onClick={handleYesClick}
         >
           {CONFIG.text.yesButton}
         </button>

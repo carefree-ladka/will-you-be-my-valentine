@@ -1,14 +1,13 @@
 import Confetti from "react-confetti";
-import type { WindowSize } from "../types";
 import { CONFIG } from "../config";
+import { useWindowSize } from "../hooks";
+import { useValentineStore } from "../store/valentineStore";
 
-interface ConfettiEffectProps {
-  windowSize: WindowSize;
-  show: boolean;
-}
-
-export const ConfettiEffect: React.FC<ConfettiEffectProps> = ({ windowSize, show }) => {
-  if (!show) return null;
+export const ConfettiEffect: React.FC = () => {
+  const windowSize = useWindowSize();
+  const { showConfetti } = useValentineStore();
+  
+  if (!showConfetti) return null;
 
   return (
     <Confetti

@@ -11,8 +11,10 @@ export interface ValentineConfig {
     valentine: string;
     yesButton: string;
     maybeButton: string;
+    noButtonTexts: string[];
     successTitle: string;
     successMessages: string[];
+    apologyReasons: string[];
     compliments: {
       title: string;
       message: string;
@@ -40,4 +42,5 @@ export interface ValentineState {
   showCompliments: boolean;
   currentCompliment: number;
   hasStarted: boolean;
+  showTransition: boolean;
 }

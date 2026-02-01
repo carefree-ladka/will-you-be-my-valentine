@@ -1,11 +1,10 @@
 import { CONFIG } from "../config";
+import { useValentineStore } from "../store/valentineStore";
 
-interface SuccessMessageProps {
-  show: boolean;
-}
-
-export const SuccessMessage: React.FC<SuccessMessageProps> = ({ show }) => {
-  if (!show) return null;
+export const SuccessMessage: React.FC = () => {
+  const { saidYes } = useValentineStore();
+  
+  if (!saidYes) return null;
 
   return (
     <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">

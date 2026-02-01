@@ -1,3 +1,3 @@
 export { useWindowSize } from './useWindowSize';
-export { useValentineState } from './useValentineState';
 export { useThreeScene } from './useThreeScene';
+export { useComplimentProgression, useApologyProgression } from './useValentineState';
